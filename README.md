@@ -21,3 +21,12 @@ As empresas escolhidas são:
 
 Vamos mostrar que com conhecimentos basicos de r podemos descobrir várias coisas de forma simples e divertida.
 
+## Elaboração do Banco de Dados
+
+Vamos usar como fonte o site Box Office Mojo que é conhecido por fornecer dados sobre os filmes. Vamos determinar que tipos de dados vamos querer para nossa analisa.
+- Gasto na produção, arrecadação mundial, arrecadação no Brasil e nos EUA:
+1. Os 10 filmes com maior bilheteria mundial;
+2. Os 3 maiores bilheterias da Disney, Fox e Universal;
+3. 5 maiores filmes da marvel e da DC;
+4. Filmes com  maiores arrecadoções em 2019
+
