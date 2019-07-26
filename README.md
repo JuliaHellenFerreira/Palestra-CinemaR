@@ -15,7 +15,7 @@ As empresas escolhidas são:
 2. Bilheteria mundial x Bilheteria no EUA x Bilheteria no Brasil
 3. Elaboração de um quiz: 
    - Qual filme lucrou mais?
-   - Qual empresa lucrou mais em 2019;
+   - Qual empresa lucrou mais em 2019?
    - Marvel x DC.
 ## Como o R Studio facilitou na hora de analisar cada informação?
 
