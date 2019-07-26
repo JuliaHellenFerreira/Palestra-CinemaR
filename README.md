@@ -28,5 +28,5 @@ Vamos usar como fonte o site Box Office Mojo que é conhecido por fornecer dados
 1. Os 10 filmes com maior bilheteria mundial;
 2. Os 3 maiores bilheterias da Disney, Fox e Universal;
 3. 5 maiores filmes da marvel e da DC;
-4. Filmes com  maiores arrecadoções em 2019
+4. Filmes com  maiores arrecadoções em 2019.
 
