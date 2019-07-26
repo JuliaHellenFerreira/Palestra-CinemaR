@@ -13,7 +13,7 @@ As empresas escolhidas são:
 ## Metas
 1. Visualizar o gasto na produção de um filme;
 2. Bilheteria mundial x Bilheteria no EUA x Bilheteria no Brasil
-3. Elaboração de um quis: 
+3. Elaboração de um quiz: 
    - Qual filme lucrou mais?
    - Qual empresa lucrou mais em 2019;
    - Marvel x DC.
