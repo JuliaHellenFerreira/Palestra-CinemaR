@@ -1,6 +1,6 @@
 # Banco de dados - Bilheteria
 
-## Os dez filmes com maiores bilheterias mundias
+## Os dez filmes com maiores bilheterias mundiais
 
 #### Criando a tabela
 
@@ -63,8 +63,10 @@ custoprod <-c(" US$ 400 milhões*",
               "US$ 200 milhões")
 
 Bilheteria <- data.frame(Filmes = filmes,
-                         Ano de Lançamento = ano,
-                         Arrecadação Total = arrectotal,
-                         Arrecadação nos EUA = arreceua,
-                         Arrecadação no Brasil = arrecbrasil,
-                         Custo da Produção = custoprod)
+                         Lançamento = ano,
+                         ArrecadaçãoTotal = arrectotal,
+                         Arrecadação.EUA = arreceua,
+                         Arrecadação.Brasil = arrecbrasil,
+                         Custo = custoprod)
+
+View(Bilheteria)
