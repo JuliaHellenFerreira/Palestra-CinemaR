@@ -4,9 +4,67 @@
 
 #### Criando a tabela
 
-filmes <- c("Vingadores: Utimato", "Avatar", "Titanic", "Star Wars: O despertar da força", "Vingadores: Guerra Infina", "Jurassic World: O mundo dos dinossauros", "Vingadores", "Velosos e Furiosos 7", "Vingadores: Era de Ultron", "Pantera Negra"            )
-ano <- c("2019", "2009", "1997", "2015", "2018", "2015", "2012", "2015", "2015", "2018")
-arrectotal<- c("US$ 2.790 bilhões", "US$ 2.789 bilhões", "US$ 2.187 bilhoes", "US$ 2,068 bilhões", " US$ 2,048 bilhões", "US$ 1,671 bilhão", "US$ 1,518 bilhão", "US$ 1,516 bilhão", "US$ 1,405 bilhão", "US$ 1,346 bilhão")
-arreceua <- c("US$ 854,2 milhões", "US$ 760,5 milhões", "US$ 659,36 milhões","US$ 936,66 milhões","US$ 678,81 milhões", "US$ 652,27 milhões","US$ 623,35 milhões", "US$ 353 milhões", "US$ 459 milhões", " US$ 700 milhões")
-arrecbrasil <-c("US$ 85,46 milhões", "US$ 58,21 milhões","US$ 70,46 milhões")
-custoprod <-c()
+filmes <- c("Vingadores: Utimato",
+            "Avatar",
+            "Titanic",
+            "Star Wars: O despertar da força",
+            "Vingadores: Guerra Infina",
+            "Jurassic World: O mundo dos dinossauros",
+            "Vingadores",
+            "Velosos e Furiosos 7",
+            "Vingadores: Era de Ultron",
+            "Pantera Negra")
+
+ano <- c("2019","2009","1997","2015","2018",
+         "2015","2012","2015","2015", "2018")
+
+arrectotal<- c("US$ 2.790 bilhões",
+               "US$ 2.789 bilhões",
+               "US$ 2.187 bilhoes",
+               "US$ 2.068 bilhões",
+               " US$ 2,048 bilhões",
+               "US$ 1.671 bilhão",
+               "US$ 1.518 bilhão",
+               "US$ 1.516 bilhão",
+               "US$ 1.405 bilhão",
+               "US$ 1.346 bilhão")
+
+arreceua <- c("US$ 854.2 milhões",
+              "US$ 760.5 milhões",
+              "US$ 659.36 milhões",
+              "US$ 936.66 milhões",
+              "US$ 678.81 milhões",
+              "US$ 652.27 milhões",
+              "US$ 623,35 milhões",
+              "US$ 353 milhões", 
+              "US$ 459 milhões", 
+              " US$ 700 milhões")
+
+arrecbrasil <-c("US$ 85.46 milhões",
+                "US$ 58.21 milhões",
+                "US$ 70.46 milhões",
+                "US$ 27.81 milhões",
+                "US$ 66.64 milhões",
+                "US$ 29 milhões",
+                "US$ 63.9 milhões",
+                "US$ 46.6 milhões",
+                "US$ 47.86 milhões",
+                "US$ 36.93 milhões")
+
+custoprod <-c(" US$ 400 milhões*",
+              "US$ 237 milhões",
+              "US$ 200 milhões",
+              "US$ 245 milhões",
+              "US$ 400 milhões*",
+              "US$ 150 milhões",
+              "US$ 220 milhões",
+              "US$ 190 milhões",
+              "US$ 250 milhões",
+              "US$ 200 milhões")
+
+Bilheteria <- data.frame(Filmes = filmes,
+                         Ano de Lançamento = ano,
+                         Arrecadação Total = arrectotal,
+                         Arrecadação nos EUA = arreceua,
+                         Arrecadação no Brasil = arrecbrasil,
+                         Custo da Produção = custoprod)
