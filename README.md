@@ -7,7 +7,7 @@ Esta palestra irá apresentar o R Studio para pessoas de todas as idades e fomen
 Nosso objetivo é analisar três grandes empresas responsáveis pelas maiores bilheterias mundiais e utulizar o R Studio para analisar cada uma delas.
 As empresas escolhidas são:
 - Disney;
-- Fox;
+- Warner;
 - Universal.
 
 ## Metas
@@ -26,7 +26,7 @@ Vamos mostrar que com conhecimentos basicos de r podemos descobrir várias coisa
 Vamos usar como fonte o site Box Office Mojo que é conhecido por fornecer dados sobre os filmes. Vamos determinar que tipos de dados vamos querer para nossa analisa.
 - Gasto na produção, arrecadação mundial, arrecadação no Brasil e nos EUA:
 1. Os 10 filmes com maior bilheteria mundial;
-2. Os 3 maiores bilheterias da Disney, Fox e Universal;
+2. Os 3 maiores bilheterias da Disney, Warner e Universal;
 3. 5 maiores filmes da marvel e da DC;
 4. Filmes com  maiores arrecadoções em 2019.
 
