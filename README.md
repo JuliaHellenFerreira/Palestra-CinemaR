@@ -1,4 +1,4 @@
-# Analisando as bilheterias mundiais
+# Analisando Bilheterias 
 
 ## Palestra
 Esta palestra irá apresentar o R Studio para pessoas de todas as idades e fomentar o interesse em aprender a linguagem. 
