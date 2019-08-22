@@ -1,0 +1,22 @@
+---
+title: "Análise das bilheterias mundiais do cinema usando R"
+author: "R-ladies Niterói"
+date: "22 de agosto de 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Leitura do Banco de dados
+
+```{r}
+library(readxl)
+url <- "https://github.com/JuliaHellenFerreira/Bilheteria/blob/master/BD-bilheteria.xlsx?raw=true"
+destfile <- "BD_bilheteria.xlsx"
+curl::curl_download(url, destfile)
+BD_bilheteria <- read_excel(destfile)
+BD_bilheteria
+```
+
