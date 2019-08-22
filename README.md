@@ -4,7 +4,7 @@
 Esta palestra irá apresentar o R Studio para pessoas de todas as idades e fomentar o interesse em aprender a linguagem. 
 
 ## O que iremos fazer?
-Nosso objetivo é analisar três grandes studios responsáveis pelas maiores bilheterias mundiais e utulizar o R Studio para analisar cada uma delas.
+Nosso objetivo é analisar três grandes studios responsáveis pelas maiores bilheterias mundiais e utilizar o R Studio para analisar cada uma delas.
 Os studios escolhidos são:
 - Disney;
 - Warner;
