@@ -20,3 +20,7 @@ BD_bilheteria <- read_excel(destfile)
 BD_bilheteria
 ```
 
+
+#Respondendo perguntas
+
+#
