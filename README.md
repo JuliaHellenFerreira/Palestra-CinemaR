@@ -30,3 +30,4 @@ Vamos usar como fonte o site Box Office Mojo que é conhecido por fornecer dados
 3. 5 maiores filmes da marvel e da DC;
 4. Filmes com  maiores arrecadoções em 2019.
 
+https://www.boxofficemojo.com/studio/chart/?yr=2019&view=company&studio=buenavista.htm
