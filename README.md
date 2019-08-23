@@ -30,6 +30,6 @@ Vamos mostrar que com conhecimentos basicos de r podemos descobrir várias coisa
 
 ## Elaboração do Banco de Dados
 
-Vamos usar como fonte o site Box Office Mojo que é conhecido por fornecer dados sobre os filmes. Vamos determinar que tipos de dados vamos querer para nossa analise..
+Vamos usar como fonte o site Box Office Mojo que é conhecido por fornecer dados sobre os filmes. Vamos determinar que tipos de dados vamos querer para nossa análise.
 
 
