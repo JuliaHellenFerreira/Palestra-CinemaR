@@ -44,7 +44,10 @@ summary(MesAug$`Total Gross`)
 
 # Países e seus lucros mensais ### Teste ###
 
-x <- BD_bilheteria2[BD_bilheteria2$..1 == "January" && BD_bilheteria2$Country == "Brazil",]
-x
+# Países e seus lucros mensais ### Teste ###
 
+dados.por.idade<-dados[(dados.sem.NA$idade>17 & dados.sem.NA$idade<70), ]
+
+x <- BD_bilheteria2[BD_bilheteria2$..1 == "January", "Brazil",]
+x
 
