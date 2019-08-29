@@ -1,3 +1,14 @@
+### Testes
+
+barplot(energia$e_eolica, main="Energia Eólica no Mundo", xlab=rotulo[1], ylab=rotulo[2], names.arg = energia$pais, ylim=c(0, 145000), cex.names = 0.8, xaxs = "i")
+
+
+
+
+
+
+
+
 # Analisando
 
 BD_bilheteria2
