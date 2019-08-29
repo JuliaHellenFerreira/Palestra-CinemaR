@@ -190,7 +190,50 @@ AustraliaAug
 
 
 
+#########LINCOLN
 
+# Países
+
+Brazil <- BD_bilheteria2[BD_bilheteria2$Country == "Brazil",]
+Brazil
+Argentina <- BD_bilheteria2[BD_bilheteria2$Country == "Argentina",]
+Argentina
+China <- BD_bilheteria2[BD_bilheteria2$Country == "China",]
+China
+USA <- BD_bilheteria2[BD_bilheteria2$Country == "USA",]
+USA
+Germany <- BD_bilheteria2[BD_bilheteria2$Country == "Germany",]
+Germany
+SouthAfrica <- BD_bilheteria2[BD_bilheteria2$Country == "South Africa",]
+SouthAfrica
+Australia <- BD_bilheteria2[BD_bilheteria2$Country == "Australia",]
+Australia
+
+
+
+Total = c( sum(BrazilJan$`Total Gross`),
+           sum(BrazilFeb$`Total Gross`),
+           sum(BrazilMar$`Total Gross`),
+           sum(BrazilApr$`Total Gross`),
+           sum(BrazilMay$`Total Gross`),
+           sum(BrazilJun$`Total Gross`),
+           sum(BrazilJul$`Total Gross`),
+           sum(BrazilAug$`Total Gross`)
+           )
+
+Meses  = month.name[1:8]
+total_tabela = data.frame()
+total_tabela = cbind(Meses,Total);View(total_tabela)
+
+
+BrazilTotal = rbind(BrazilJan,BrazilFeb)
+
+BrazilTotal$Total.Gross
+names(BrazilFeb)
+
+# Gráficos
+
+# Gráfico de Barras - Em que época mais se faturou?
 
 
 
