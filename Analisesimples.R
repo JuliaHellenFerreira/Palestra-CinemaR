@@ -1,19 +1,6 @@
-### Testes
+# Analisando...
 
-barplot(energia$e_eolica, main="Energia Eólica no Mundo", xlab=rotulo[1], ylab=rotulo[2], names.arg = energia$pais, ylim=c(0, 145000), cex.names = 0.8, xaxs = "i")
-
-
-
-
-
-
-
-
-# Analisando
-
-BD_bilheteria2
-
-## Filtrar os meses
+## Filtrar os meses - Assim podemos ver as bilheterias mundiais por mês.
 
 MesJan <- BD_bilheteria2[BD_bilheteria2$Weekly == "January",]
 MesJan
@@ -32,7 +19,7 @@ MesJul
 MesAug <- BD_bilheteria2[BD_bilheteria2$Weekly == "August",]
 MesAug
 
-# Soma do lucro total de cada mês
+# Soma do lucro total de cada mês - Podemos fazer uma soma dos países repetidos 
 
 sum(MesJan$`Total Gross`)
 sum(MesFeb$`Total Gross`)
@@ -43,7 +30,7 @@ sum(MesJun$`Total Gross`)
 sum(MesJul$`Total Gross`)
 sum(MesAug$`Total Gross`)
 
-# Resumo dos meses
+# Resumo dos meses - Saber as informações basicas
 
 summary(MesJan$`Total Gross`)
 summary(MesFeb$`Total Gross`)
@@ -53,7 +40,7 @@ summary(MesJun$`Total Gross`)
 summary(MesJul$`Total Gross`)
 summary(MesAug$`Total Gross`)
 
-# Países e suas bilheterias mensais 
+# Países e suas bilheterias mensais ( Meses repetidos) 
 
 ## Brazil
 
@@ -188,11 +175,7 @@ AustraliaJul
 AustraliaAug <- BD_bilheteria2[BD_bilheteria2$Weekly == "August" & BD_bilheteria2$Country == "Australia",]
 AustraliaAug
 
-
-
-#########LINCOLN
-
-# Países
+# Países - Conhecer as informações do país 
 
 Brazil <- BD_bilheteria2[BD_bilheteria2$Country == "Brazil",]
 Brazil
@@ -209,7 +192,9 @@ SouthAfrica
 Australia <- BD_bilheteria2[BD_bilheteria2$Country == "Australia",]
 Australia
 
+# Bilhterias mensais por países ( Sem repetição de meses)
 
+# Brazil
 
 Total = c( sum(BrazilJan$`Total Gross`),
            sum(BrazilFeb$`Total Gross`),
@@ -220,20 +205,32 @@ Total = c( sum(BrazilJan$`Total Gross`),
            sum(BrazilJul$`Total Gross`),
            sum(BrazilAug$`Total Gross`)
            )
-
 Meses  = month.name[1:8]
-total_tabela = data.frame()
-total_tabela = cbind(Meses,Total);View(total_tabela)
-
-
-BrazilTotal = rbind(BrazilJan,BrazilFeb)
-
+total_tabela1 = data.frame()
+total_tabela1 = cbind(Meses,Total);View(total_tabela1)
+BrazilTotal = rbind(BrazilJan,BrazilFeb, BrazilMar, BrazilApr, BrazilMay,BrazilJun, BrazilJul, BrazilAug)
 BrazilTotal$Total.Gross
-names(BrazilFeb)
+BrazilTotal
+
+# Argentina
+
+Total = c( sum(ArgentinaJan$`Total Gross`),
+           sum(ArgentinaFeb$`Total Gross`),
+           sum(ArgentinaMar$`Total Gross`),
+           sum(ArgentinaApr$`Total Gross`),
+           sum(ArgentinaMay$`Total Gross`),
+           sum(ArgentinaJun$`Total Gross`),
+           sum(ArgentinaJul$`Total Gross`),
+           sum(ArgentinaAug$`Total Gross`)
+)
+total_tabela2 <- data.frame()
+total_tabela2 <- cbind(Meses,Total);View(total_tabela)
+ArgentinaTotal <- rbind(ArgentinaJan, ArgentinaFeb, ArgentinaMar, ArgentinaApr, ArgentinaMay,ArgentinaJun, ArgentinaJul, ArgentinaAug)
+ArgentinaTotal$Total.Gross
+ArgentinaTotal
+
 
 # Gráficos
 
 # Gráfico de Barras - Em que época mais se faturou?
-
-
 
