@@ -11,7 +11,7 @@ base = BD_bilheteria2 %>%
   
 summarise(TotalGross = sum(`Total Gross`/1000000))
 
-############################### Bilheterias Mensais por Países#######################################
+############################### Bilheterias Mensais por Países #######################################
 
 pais <- function(data,p = "Brazil"){
 Base1 = base %>% 
