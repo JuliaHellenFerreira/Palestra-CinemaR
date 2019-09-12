@@ -40,20 +40,25 @@ pais(BD_bilheteria2, p = "Australia")
 
 ### Gráfico de Barras - Horizontal
 
-## Barras Horizontal ## Ajustar o tamanho do gráfico 
+## Barras Horizontal
 
 x <- table(BD_bilheteria2$Genere)
+x <- sort(x)
 class(x)
+par(mar=c(5,6.5,4,2))
 barplot(x,
         horiz = TRUE,
-        xlab = "Genêros",
-        ylab = "Frequência absoluta",
-        col = c("seagreen", "#FF9911"))
-box(bty = "L")
+        xlab = "Frequência Absoluta",
+        col = c("seagreen", "#FF9911"),
+        las=1
+        )
 
-## Gráfico de 
+## Gráfico de Setores
 
-
+### Antes do tratramento ### 
+y <- table(BD_bilheteria2$Genere)
+class(y)
+pie(y)
 
 # imdb %>% 
 #   filter(diretor == "Steven Spielberg") %>%
