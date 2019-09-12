@@ -16,9 +16,24 @@ summarise(TotalGross = sum(`Total Gross`/1000000))
 # Selecionar o país:
 
 pais <- function(data,p = "Brazil"){
-Base1 = base %>% 
-filter(Country == p)
-  
+Base1 = data %>% 
+dplyr::filter(Country == p)
+return(Base1)
+}
+pais(BD_bilheteria2, p = "Brazil")  
+
+# Selecionar gênero:
+
+genero_filme <- function(data, p="Brazil"){
+  Base1 = data %>% 
+    dplyr::select(Genere)
+  return(Base1)
+}
+
+genero_filme(BD_bilheteria2, p = "Brazil")  
+
+
+
 # Ordenar os meses
 
 Base1$Weekly = ordered(Base1$Weekly, levels = c("January","February","March","April","May",
@@ -33,8 +48,8 @@ Base1$Weekly = ordered(Base1$Weekly, levels = c("January","February","March","Ap
 barras <- ggplot(Base1,aes(x = Weekly, y = TotalGross))+
   geom_bar(stat = "identity", col = "black", fill = "steelblue")+
   labs(x = "Meses", y = "Bilheteria", title = paste0("Bilheteria Mensal dos filmes nos ", p, " em 2019 em Milhões de Dólares"))
-  listadegraficos <- list(barras)
-  return(listadegraficos)
+listadegraficos <- list(barras)
+return(listadegraficos)
 }
 pais(BD_bilheteria2, p = "Australia")
 
@@ -59,6 +74,10 @@ barplot(x,
 y <- table(BD_bilheteria2$Genere)
 class(y)
 pie(y)
+
+### Tratamento do gráficos de setores ###
+
+
 
 # imdb %>% 
 #   filter(diretor == "Steven Spielberg") %>%
