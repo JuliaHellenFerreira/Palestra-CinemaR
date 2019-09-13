@@ -252,12 +252,30 @@ pie(freq1, main="Genêros no Brasil", labels=rotulos, cex=0.7, col=rainbow(8))
 base1 = BD_bilheteria2 %>% 
   group_by(`Total Gross`,Weekly) %>% 
   summarise(TotalGross = sum(`Total Gross`/1000000))
+
+# January
+
 January = base1 %>% 
   filter(Weekly == "January")
-January <- sum(soma[1])
+January <- sum(January[1])
 
+# February
 
+February = base1 %>% 
+  filter(Weekly == "February")
+February <- sum(Febrary[1])
 
+# March 
+
+March = base1 %>% 
+  filter(Weekly == "March")
+March <- sum(March[1])
+
+# April
+
+ April = base1 %>% 
+  filter(Weekly == "April")
+April <- sum(April[1])
 
   
   
