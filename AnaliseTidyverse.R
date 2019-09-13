@@ -1,5 +1,6 @@
 # Tidyverse
 
+install.packages("esquisse")
 install.packages("tidyverse")
 
 # Filtrar os países e os meses
@@ -250,20 +251,20 @@ pie(freq1, main="Genêros no Brasil", labels=rotulos, cex=0.7, col=rainbow(8))
 ### Soma sem repetição dos meses
 
 base1 = BD_bilheteria2 %>% 
-  group_by(`Total Gross`,Weekly) %>% 
+  group_by(`Total Gross`,Weekly, Country) %>% 
   summarise(TotalGross = sum(`Total Gross`/1000000))
 
-# January
+# January - Brazil
 
-January = base1 %>% 
-  filter(Weekly == "January")
-January <- sum(January[1])
+JanBra = base1 %>% 
+  filter(Weekly == "January", Country == "Brazil")
+JanBra <- sum(JanBra[1])
 
 # February
 
 February = base1 %>% 
   filter(Weekly == "February")
-February <- sum(Febrary[1])
+February <- sum(February[1])
 
 # March 
 
@@ -277,7 +278,24 @@ March <- sum(March[1])
   filter(Weekly == "April")
 April <- sum(April[1])
 
-  
-  
-  
+# May
+
+May = base1 %>% 
+  filter(Weekly == "May")
+May <- sum(May[1])
+
+# June
+
+May = base1 %>% 
+  filter(Weekly == "May")
+May <- sum(May[1])
+
+
+# Teste
+
+mes<-1:5
+bilh<-c(January, February, March, April, May)
+dados <- data.frame(mes, bilh, grupo=factor(c(rep(1, 5))) )
+p=ggplot(dados, aes(x = mes, y = bilh, group = grupo))
+p + geom_line(color = 2) #podemos especificar a cor da linha
   
