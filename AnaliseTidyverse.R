@@ -1,12 +1,30 @@
 # Tidyverse
 
-library(tidyverse)
+install.packages("tidyverse")
 
 # Filtrar os países e os meses
 
+require(tidyverse)
+
+# Brazil
+
 base = BD_bilheteria2 %>% 
   group_by(Country,Weekly) %>% 
-  
+  summarise(TotalGross = sum(`Total Gross`/1000000))
+BaseBrazil = base %>% 
+  filter(Country == "Brazil")
+BaseBrazil
+
+#USA
+
+base = BD_bilheteria2 %>% 
+  group_by(Country,Weekly) %>% 
+  summarise(TotalGross = sum(`Total Gross`/1000000))
+BaseBrazil = base %>% 
+  filter(Country == "USA")
+BaseBrazil
+
+
 # Simplificar o eixo Y
   
 summarise(TotalGross = sum(`Total Gross`/1000000))
@@ -227,20 +245,21 @@ porc<-round(freq1*100/sum(freq1), 2)
 rotulos<-paste(names(freq1),"(",porc,"%)", sep="")
 pie(freq1, main="Genêros no Brasil", labels=rotulos, cex=0.7, col=rainbow(8))
 
+# Gráfico de Linha
+
+### Soma sem repetição dos meses
+
+base1 = BD_bilheteria2 %>% 
+  group_by(`Total Gross`,Weekly) %>% 
+  summarise(TotalGross = sum(`Total Gross`/1000000))
+January = base1 %>% 
+  filter(Weekly == "January")
+January <- sum(soma[1])
 
 
 
 
-
-
-# imdb %>% 
-#   filter(diretor == "Steven Spielberg") %>%
-#   group_by(ano) %>% 
-#   summarise(nota_media = mean(nota_imdb, na.rm = TRUE)) %>% 
-#   ggplot() +
-#   geom_line(aes(x = ano, y = nota_media))
-
-# imdb %>% 
-#   filter(filmes %in% c("Captain Marvel", "Spider-Man: Into The Spider-Verse", "Avengers: Endgame", "Spider-Man: Far from Home")) %>%
-#   ggplot() + 
-#   geom_boxplot(aes(x = Filmes, y = Bilheterias))
+  
+  
+  
+  
