@@ -13,6 +13,7 @@ require(tidyverse)
 barplot(sort(table(BD_bilheteria2$`#1 Movie`)))
 tabela = as_tibble(as.data.frame(sort(table(BD_bilheteria2$`#1 Movie`))))
 tabela = tabela %>% arrange(desc(Freq))
+view(tabela)
 
 # Brazil
 
