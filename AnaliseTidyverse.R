@@ -4,9 +4,14 @@ install.packages("tidyverse")
 BD_bilheteria2
 
 # Filtrar os países e os meses
+
 head(BD_bilheteria2)
 require(tidyverse)
+
+# Qual filme fez maior sucesso em 2019?
+
 barplot(sort(table(BD_bilheteria2$`#1 Movie`)))
+
 # Brazil
 
 base = BD_bilheteria2 %>% 
