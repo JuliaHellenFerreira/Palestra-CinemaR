@@ -11,6 +11,8 @@ require(tidyverse)
 # Qual filme fez maior sucesso em 2019?
 
 barplot(sort(table(BD_bilheteria2$`#1 Movie`)))
+tabela = as_tibble(as.data.frame(sort(table(BD_bilheteria2$`#1 Movie`))))
+tabela = tabela %>% arrange(desc(Freq))
 
 # Brazil
 
@@ -201,7 +203,7 @@ ggplot(BaseBrazil,aes(x = Weekly, y = TotalGross))+
 
 ## Barras Horizontal
 
-x <- table(BD_bilheteria2$Genere)
+x <- table(BD_bilheteria2$Genre)
 x <- sort(x)
 class(x)
 par(mar=c(5,6.5,4,2))
