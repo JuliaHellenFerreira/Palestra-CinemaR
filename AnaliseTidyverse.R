@@ -1,12 +1,12 @@
 # Tidyverse
 
-install.packages("esquisse")
 install.packages("tidyverse")
+BD_bilheteria2
 
 # Filtrar os países e os meses
-
+head(BD_bilheteria2)
 require(tidyverse)
-
+barplot(sort(table(BD_bilheteria2$`#1 Movie`)))
 # Brazil
 
 base = BD_bilheteria2 %>% 
@@ -250,9 +250,9 @@ pie(freq1, main="Genêros no Brasil", labels=rotulos, cex=0.7, col=rainbow(8))
 
 ### Soma sem repetição dos meses
 
-base1 = BD_bilheteria2 %>% 
-  group_by(`Total Gross`,Weekly, Country) %>% 
-  summarise(TotalGross = sum(`Total Gross`/1000000))
+#base1 = BD_bilheteria2 %>% 
+  #group_by(`Total Gross`,Weekly, Country) %>% 
+  #summarise(TotalGross = sum(`Total Gross`/1000000))
 
 # January - Brazil
 
