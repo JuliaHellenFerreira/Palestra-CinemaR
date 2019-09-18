@@ -152,16 +152,55 @@ ggplot(BaseBrazil,aes(x = Weekly, y = TotalGross))+
 
 ## Barras Horizontal
 
-# Qual gênero é mais popular no mundo?
+# Qual gênero é mais popular no mundo? - Não está rodando 
 
-x <-  table(BD_bilheteria2$`Total Gross`)
+x <-  table(BD_bilheteria2$Genre)
 x <- sort(x)
 class(x)
 par(mar=c(5,6.5,4,2))
 barplot(x,
         horiz = TRUE,
         xlab = "Genre",
-        col = c("powderblue", "mediumturquoise"),
+        col = c("turquoise", "pink"),
         las =1
 )
+box(bty = "L", las = 0.5)
+
+### Antes do tratramento ### 
+
+y <- table(BD_bilheteria2$Genre)
+class(y)
+pie(y)
+title("Gênero - Mundial")
+
+### Tratamento do gráficos de setores ###
+
+# Selecionar gênero:
+
+# Filtrar pelo país e os gêneros 
+
+genero_filme <- function(data, p="Brazil"){
+  Base1 = data %>% 
+    dplyr::select(Genre)
+  return(Base1)
+}
+genero_filme(BD_bilheteria2, p = "Brazil")
+
+# Dados para o gráfico - Brazil 
+
+freq <- round(sort(100*y/sum(y)),2)
+freq
+
+generos <- as.vector(freq)
+names(freq)
+pie(freq)
+
+## Tratando - Brazil
+
+freq1 <- c(sum(generos[1 : 4]), generos[5:11])
+names(freq1) <-  c("Outros", names(freq[5:11]))
+
+porc<-round(freq1*100/sum(freq1), 2)
+rotulos<-paste(names(freq1),"(",porc,"%)", sep="")
+pie(freq1, main="Genêros no Brasil", labels=rotulos, cex=0.7, col=rainbow(8))
 
