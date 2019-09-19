@@ -166,43 +166,38 @@ barplot(x,
 )
 box(bty = "L", las = 0.5)
 
-### Antes do tratramento ### 
-
-y <- table(BD_bilheteria2$Genre)
-class(y)
-pie(y)
-title("Gênero - Mundial")
-
-### Tratamento do gráficos de setores ###
-
-# Selecionar gênero:
-
-# Filtrar pelo país e os gêneros 
+#Gráfico de setores - ERRO
 
 genero_filme <- function(data, p="Brazil"){
   Base1 = data %>% 
+    filter(Country == p)%>%
     dplyr::select(Genre)
   return(Base1)
 }
-genero_filme(BD_bilheteria2, p = "Brazil")
-
-# Dados para o gráfico - Brazil 
-
-freq <- round(sort(100*y/sum(y)),2)
-freq
-
-generos <- as.vector(freq)
-names(freq)
-pie(freq)
+aux = genero_filme(BD_Bilheteria2_20_202018, p = "Brazil")
+freq2 <- c(sum(aux[1 : 4]), aux[5:11])
+names(freq2) <-  c("Outros", names(freq2[5:11]))
+porc<-round(freq2*100/sum(freq2), 2)
+rotulos<-paste(names(freq2),"(",porc,"%)", sep="")
+pie(freq2, main="Genêros no Brasil 2018", labels=rotulos, cex=0.7, col=rainbow(8))
 
 # Box plot
 
-
-BD_bilheteria2 %>% 
+BD_Bilheteria2_2018 %>% 
   filter(Genre %in% c("Action", "Adventure", "Thriller")) %>%
   ggplot(aes(x = Genre, y = `Total Gross`, fill = Genre)) + 
   geom_boxplot(show.legend = FALSE) +
   scale_y_continuous(labels = scales::dollar) +
   scale_x_discrete(limits = c("Action", "Adventure", "Thriller"))+
-  labs(title = "Box Plot - Bilheterias dos maiores gêneros 2019")
+  labs(title = "Box Plot - Bilheterias dos maiores gêneros 2018")
+
+
+
+
+   
+
+
+
+
+
 
