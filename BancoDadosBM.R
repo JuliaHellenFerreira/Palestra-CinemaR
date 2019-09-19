@@ -195,12 +195,13 @@ generos <- as.vector(freq)
 names(freq)
 pie(freq)
 
-## Tratando - Brazil
+# Box plot
 
-freq1 <- c(sum(generos[1 : 4]), generos[5:11])
-names(freq1) <-  c("Outros", names(freq[5:11]))
-
-porc<-round(freq1*100/sum(freq1), 2)
-rotulos<-paste(names(freq1),"(",porc,"%)", sep="")
-pie(freq1, main="Genêros no Brasil", labels=rotulos, cex=0.7, col=rainbow(8))
-
+BD_bilheteria2 %>% 
+  filter(Genre %in% c("Action", "Adventure", "Thriller")) %>%
+  ggplot() + 
+  geom_boxplot(aes(x = Genre, y = `Total Gross`, fill = Genre), show.legend = FALSE) +
+  scale_y_continuous(labels = scales::dollar) +
+  scale_x_discrete(
+    limits = c("Action", "Adventure", "Thriller")
+  )
