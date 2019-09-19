@@ -197,11 +197,12 @@ pie(freq)
 
 # Box plot
 
+
 BD_bilheteria2 %>% 
   filter(Genre %in% c("Action", "Adventure", "Thriller")) %>%
-  ggplot() + 
-  geom_boxplot(aes(x = Genre, y = `Total Gross`, fill = Genre), show.legend = FALSE) +
+  ggplot(aes(x = Genre, y = `Total Gross`, fill = Genre)) + 
+  geom_boxplot(show.legend = FALSE) +
   scale_y_continuous(labels = scales::dollar) +
-  scale_x_discrete(
-    limits = c("Action", "Adventure", "Thriller")
-  )
+  scale_x_discrete(limits = c("Action", "Adventure", "Thriller"))+
+  labs(title = "Box Plot - Bilheterias dos maiores gêneros 2019")
+
