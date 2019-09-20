@@ -2,20 +2,19 @@
 
 library(tidyverse)
 
-BD_bilheteria2
-
-
 # Qual filme fez maior sucesso em 2019? - Gerar uma tabela com as frequências
 
 tabela = as_tibble(as.data.frame(sort(table(BD_bilheteria2$`#1 Movie`))))
 tabela = tabela %>% arrange(desc(Freq))
 view(tabela)
 
-###### Fazer gráficos
+################################### Fazer gráficos ##############################
 
 # Gráfico de Barras
 
-## EUA - 
+# Qual mês teve maior bilhteria?
+
+## EUA
 
 base1 = BD_bilheteria2 %>% 
   group_by(Country,Weekly) %>% 
@@ -73,7 +72,6 @@ ggplot(BaseBrazil,aes(x = Weekly, y = TotalGross))+
   labs(x = "Meses", y = "Bilheteria", title = "Bilheteria Mensal nos filmes na Argentina em 2018 em Milhões de Dólares")
 
 # China
-
 
 base1 = BD_bilheteria2 %>% 
   group_by(Country,Weekly) %>% 
@@ -152,7 +150,7 @@ ggplot(BaseBrazil,aes(x = Weekly, y = TotalGross))+
 
 ## Barras Horizontal
 
-# Qual gênero é mais popular no mundo? - Não está rodando 
+# Qual gênero é mais popular no mundo?
 
 x <-  table(BD_bilheteria2$Genre)
 x <- sort(x)
@@ -166,22 +164,54 @@ barplot(x,
 )
 box(bty = "L", las = 0.5)
 
-#Gráfico de setores - ERRO
+#Gráfico de setores 
+
+# Qual o gênero predominante?
+
+# Brazil
 
 genero_filme <- function(data, p="Brazil"){
   Base1 = data %>% 
-    filter(Country == p)%>%
-    dplyr::select(Genre)
+    filter(Country == p) %>% 
+    select(Genre)
   return(Base1)
 }
-aux = genero_filme(BD_Bilheteria2_20_202018, p = "Brazil")
-freq2 <- c(sum(aux[1 : 4]), aux[5:11])
-names(freq2) <-  c("Outros", names(freq2[5:11]))
-porc<-round(freq2*100/sum(freq2), 2)
-rotulos<-paste(names(freq2),"(",porc,"%)", sep="")
-pie(freq2, main="Genêros no Brasil 2018", labels=rotulos, cex=0.7, col=rainbow(8))
+
+SetorBrazil = genero_filme(BD_bilheteria2, p = "Brazil")
+W = table(SetorBrazil)
+
+freq <- round(sort(100*W/sum(W)),2)
+freq
+freq1 <- W
+names(freq1) <-  c( names(freq[1:11]))
+porc<-round(freq1*100/sum(freq1), 2)
+rotulos<-paste(names(freq1),"(",porc,"%)", sep="")
+pie(freq1, main="Genêros na Brazil 2019", labels=rotulos, cex=0.7, col=rainbow(8))
+
+genero_filme <- function(data, p="Brazil"){
+  Base1 = data %>% 
+    filter(Country == p) %>% 
+    select(Genre)
+  return(Base1)
+}
+
+# China
+
+SetorChina = genero_filme(BD_bilheteria2, p = "China")
+W = table(SetorChina)
+
+freq <- round(sort(100*W/sum(W)),2)
+freq
+freq1 <- W
+names(freq1) <-  c( names(freq[1:11]))
+porc<-round(freq1*100/sum(freq1), 2)
+rotulos<-paste(names(freq1),"(",porc,"%)", sep="")
+pie(freq1, main="Genêros no China 2019", labels=rotulos, cex=0.7, col=rainbow(8))
+
 
 # Box plot
+
+# Bilheteria X Gênero
 
 BD_Bilheteria2_2018 %>% 
   filter(Genre %in% c("Action", "Adventure", "Thriller")) %>%
